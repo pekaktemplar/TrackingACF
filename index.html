@@ -246,6 +246,16 @@
                     default: return 'bg-[#ee2228] bg-opacity-10 text-[#ee2228]';
                 }
             };
+            
+            const showErrorMessage = (message) => {
+                const errorMsgHtml = `<div class="text-center text-red-600 p-4 bg-red-50 rounded-lg border border-red-200">
+                    <p class="font-bold">Gagal Terhubung ke Database</p>
+                    <p class="text-xs mt-2">${message}</p>
+                    <p class="text-xs mt-2">Pastikan konfigurasi benar dan domain telah diizinkan di Firebase.</p>
+                </div>`;
+                kebumenList.innerHTML = errorMsgHtml;
+                banyuwangiList.innerHTML = errorMsgHtml;
+            }
 
             const createEntryElement = (data) => {
                 const entryDiv = document.createElement('div');
@@ -417,6 +427,7 @@
                     updateSummaryAndCharts();
                 }, (error) => {
                     console.error("Gagal mengambil data real-time: ", error);
+                    showErrorMessage(`Tidak dapat mengambil data. (${error.code})`);
                 });
             };
 
@@ -442,9 +453,7 @@
                     } else {
                         signInAnonymously(auth).catch(error => {
                             console.error("Gagal login anonim:", error);
-                            const errorMsg = `<p class="text-center text-red-500 pt-16">Gagal terhubung ke server. Pastikan konfigurasi Firebase Anda benar.</p>`;
-                            document.getElementById('kebumen-list').innerHTML = errorMsg;
-                            document.getElementById('banyuwangi-list').innerHTML = errorMsg;
+                            showErrorMessage(`Proses autentikasi gagal. (${error.code})`);
                         });
                     }
                 });
