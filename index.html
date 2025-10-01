@@ -57,6 +57,27 @@
         .list-item-enter {
             animation: slideInFade 0.5s ease-out forwards;
         }
+        
+        /* Animasi untuk field keterangan */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                max-height: 100px; /* Cukup besar */
+            }
+        }
+        .keterangan-field {
+            transition: all 0.3s ease-in-out;
+            overflow: hidden;
+        }
+        .keterangan-field.visible {
+            animation: slideDown 0.4s ease-out forwards;
+        }
     </style>
 </head>
 <body class="bg-[#eaf1ed]">
@@ -110,7 +131,7 @@
                     <h2 class="text-2xl font-bold text-[#154887]">Tim Kabupaten Kebumen</h2>
                 </div>
                 <div id="kebumen-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
-                     <p class="text-center text-gray-400 pt-16">Menunggu konfigurasi Firebase...</p>
+                     <p class="text-center text-gray-400 pt-16">Menunggu koneksi ke database...</p>
                 </div>
                 <div class="mt-6 pt-6 border-t border-gray-200">
                     <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Harian Baru</h3>
@@ -118,8 +139,18 @@
                         <input type="date" id="kebumen-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#194e91] focus:border-[#194e91] sm:text-sm p-2 bg-white">
                         <input type="text" id="kebumen-lokasi" placeholder="Contoh: Desa Sruweng" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#194e91] focus:border-[#194e91] sm:text-sm p-2 bg-white">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <select id="kebumen-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#194e91] focus:border-[#194e91] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status Radiologi</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
-                            <select id="kebumen-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#194e91] focus:border-[#194e91] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status SITB</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                            <div>
+                                <select id="kebumen-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#194e91] focus:border-[#194e91] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status Radiologi</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="kebumen-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="kebumen-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#194e91] focus:border-[#194e91] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <select id="kebumen-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#194e91] focus:border-[#194e91] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status SITB</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="kebumen-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="kebumen-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#194e91] focus:border-[#194e91] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
                         </div>
                         <button type="submit" class="w-full bg-[#154887] text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-[#194e91] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#32629d] transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
                             Tambah Laporan
@@ -135,7 +166,7 @@
                     <h2 class="text-2xl font-bold text-[#154887]">Tim Kabupaten Banyuwangi</h2>
                 </div>
                 <div id="banyuwangi-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
-                    <p class="text-center text-gray-400 pt-16">Menunggu konfigurasi Firebase...</p>
+                    <p class="text-center text-gray-400 pt-16">Menunggu koneksi ke database...</p>
                 </div>
                 <div class="mt-6 pt-6 border-t border-gray-200">
                     <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Harian Baru</h3>
@@ -143,8 +174,18 @@
                         <input type="date" id="banyuwangi-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#b68103] focus:border-[#b68103] sm:text-sm p-2 bg-white">
                         <input type="text" id="banyuwangi-lokasi" placeholder="Contoh: Kecamatan Kalibaru" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#b68103] focus:border-[#b68103] sm:text-sm p-2 bg-white">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <select id="banyuwangi-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#b68103] focus:border-[#b68103] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status Radiologi</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
-                            <select id="banyuwangi-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#b68103] focus:border-[#b68103] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status SITB</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                           <div>
+                                <select id="banyuwangi-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#b68103] focus:border-[#b68103] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status Radiologi</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="banyuwangi-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="banyuwangi-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#b68103] focus:border-[#b68103] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <select id="banyuwangi-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#b68103] focus:border-[#b68103] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status SITB</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="banyuwangi-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="banyuwangi-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#b68103] focus:border-[#b68103] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
                         </div>
                         <button type="submit" class="w-full bg-[#b39058] text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-[#b68103] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#d0ad5f] transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
                             Tambah Laporan
@@ -167,8 +208,22 @@
                 <div><label for="edit-tanggal" class="block text-sm font-medium text-gray-700">Tanggal</label><input type="date" id="edit-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#32629d] focus:border-[#32629d] sm:text-sm p-2"></div>
                 <div><label for="edit-lokasi" class="block text-sm font-medium text-gray-700">Nama Lokasi Kegiatan</label><input type="text" id="edit-lokasi" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#32629d] focus:border-[#32629d] sm:text-sm p-2"></div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div><label for="edit-radiologi" class="block text-sm font-medium text-gray-700">Status Radiologi</label><select id="edit-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#32629d] focus:border-[#32629d] sm:text-sm p-2"><option value="Belum Selesai">Belum Selesai</option><option value="Proses">Proses</option><option value="Selesai">Selesai</option></select></div>
-                    <div><label for="edit-sitb" class="block text-sm font-medium text-gray-700">Status Input SITB</label><select id="edit-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#32629d] focus:border-[#32629d] sm:text-sm p-2"><option value="Belum Selesai">Belum Selesai</option><option value="Proses">Proses</option><option value="Selesai">Selesai</option></select></div>
+                    <div>
+                        <label for="edit-radiologi" class="block text-sm font-medium text-gray-700">Status Radiologi</label>
+                        <select id="edit-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#32629d] focus:border-[#32629d] sm:text-sm p-2"><option value="Belum Selesai">Belum Selesai</option><option value="Proses">Proses</option><option value="Selesai">Selesai</option></select>
+                        <div id="edit-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                             <label for="edit-radiologi-keterangan" class="block text-sm font-medium text-gray-700 mt-2">Keterangan Proses Radiologi</label>
+                            <textarea id="edit-radiologi-keterangan" rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#32629d] focus:border-[#32629d] sm:text-sm p-2"></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="edit-sitb" class="block text-sm font-medium text-gray-700">Status Input SITB</label>
+                        <select id="edit-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#32629d] focus:border-[#32629d] sm:text-sm p-2"><option value="Belum Selesai">Belum Selesai</option><option value="Proses">Proses</option><option value="Selesai">Selesai</option></select>
+                        <div id="edit-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                            <label for="edit-sitb-keterangan" class="block text-sm font-medium text-gray-700 mt-2">Keterangan Proses SITB</label>
+                            <textarea id="edit-sitb-keterangan" rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#32629d] focus:border-[#32629d] sm:text-sm p-2"></textarea>
+                        </div>
+                    </div>
                 </div>
                 <div class="pt-4 flex justify-end space-x-3">
                     <button type="button" id="cancel-edit-btn" class="bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 transition-all duration-300 transform hover:scale-105">Batal</button>
@@ -194,13 +249,11 @@
     <script type="module">
         // Impor fungsi-fungsi yang diperlukan dari Firebase SDK
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        // PERBAIKAN: Mengganti 'firestore.js' dengan 'firebase-firestore.js'
         import { getFirestore, collection, addDoc, onSnapshot, doc, deleteDoc, updateDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
         import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 
         // --- START: Konfigurasi Firebase ---
         // TODO: Ganti dengan konfigurasi Firebase dari proyek Anda.
-        // Anda bisa mendapatkan ini dari konsol Firebase: Setelan Proyek > Umum > Aplikasi Web Anda > Konfigurasi
         const firebaseConfig = {
             apiKey: "AIzaSyCDZacSkeSLg1nIcAFFzTHOngmBDjaSK38",
             authDomain: "trackingacf.firebaseapp.com",
@@ -215,17 +268,13 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
         const auth = getAuth(app);
-        const dbCollectionPath = "kegiatan"; // Nama koleksi di database Firestore Anda
+        const dbCollectionPath = "kegiatan";
 
         document.addEventListener('DOMContentLoaded', () => {
-            let kebumenData = [];
-            let banyuwangiData = [];
             let radiologiChart, sitbChart;
             let itemToDeleteId = null;
 
-            const kebumenForm = document.getElementById('kebumen-form');
             const kebumenList = document.getElementById('kebumen-list');
-            const banyuwangiForm = document.getElementById('banyuwangi-form');
             const banyuwangiList = document.getElementById('banyuwangi-list');
             
             const editModal = document.getElementById('edit-modal');
@@ -263,6 +312,11 @@
                 entryDiv.className = 'bg-[#eaf1ed] p-4 rounded-lg border border-gray-200 transition-all duration-300 hover:shadow-md hover:border-[#d0ad5f] list-item-enter';
                 entryDiv.setAttribute('data-id', data.id);
                 
+                const radiologiKeteranganHTML = data.radiologi === 'Proses' && data.radiologiKeterangan ?
+                    `<p class="mt-1 text-xs text-gray-600 pl-2 border-l-2 border-yellow-400">Ket: ${data.radiologiKeterangan}</p>` : '';
+                const sitbKeteranganHTML = data.sitb === 'Proses' && data.sitbKeterangan ?
+                    `<p class="mt-1 text-xs text-gray-600 pl-2 border-l-2 border-yellow-400">Ket: ${data.sitbKeterangan}</p>` : '';
+
                 entryDiv.innerHTML = `
                     <div class="flex justify-between items-start mb-3">
                         <div>
@@ -278,9 +332,11 @@
                         <span class="font-semibold text-gray-600">Radiologi:</span><span class="px-2 py-0.5 rounded-full font-medium ${getStatusBadge(data.radiologi)}">${data.radiologi}</span>
                         <span class="font-semibold text-gray-600">SITB:</span><span class="px-2 py-0.5 rounded-full font-medium ${getStatusBadge(data.sitb)}">${data.sitb}</span>
                     </div>
+                    ${radiologiKeteranganHTML}
+                    ${sitbKeteranganHTML}
                 `;
                 entryDiv.querySelector('.delete-btn').addEventListener('click', () => showDeleteConfirmModal(data.id));
-                entryDiv.querySelector('.edit-btn').addEventListener('click', () => openEditModal(data.id));
+                entryDiv.querySelector('.edit-btn').addEventListener('click', () => openEditModal(data));
                 return entryDiv;
             };
             
@@ -294,8 +350,7 @@
                 }
             };
 
-            const updateSummaryAndCharts = () => {
-                const allData = [...kebumenData, ...banyuwangiData];
+            const updateSummaryAndCharts = (allData) => {
                 document.getElementById('total-kegiatan').textContent = allData.length;
                 document.getElementById('radiologi-selesai').textContent = allData.filter(d => d.radiologi === 'Selesai').length;
                 document.getElementById('sitb-selesai').textContent = allData.filter(d => d.sitb === 'Selesai').length;
@@ -319,19 +374,23 @@
                 const tanggalInput = form.querySelector('input[type="date"]').value;
                 const lokasi = form.querySelector('input[type="text"]').value.trim();
                 const radiologi = form.querySelector('select[id*="radiologi"]').value;
+                const radiologiKeterangan = form.querySelector('textarea[id*="radiologi-keterangan"]').value.trim();
                 const sitb = form.querySelector('select[id*="sitb"]').value;
+                const sitbKeterangan = form.querySelector('textarea[id*="sitb-keterangan"]').value.trim();
 
                 if (!tanggalInput || !lokasi || !radiologi || !sitb) {
                     alert('Semua field harus diisi.');
                     return;
                 }
                 const formattedDate = new Date(tanggalInput + 'T00:00:00').toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-                const newEntry = { team, tanggalDisplay: formattedDate, tanggalInput, lokasi, radiologi, sitb };
+                const newEntry = { team, tanggalDisplay: formattedDate, tanggalInput, lokasi, radiologi, radiologiKeterangan, sitb, sitbKeterangan };
                 
                 try {
                     await addDoc(collection(db, dbCollectionPath), newEntry);
                     form.reset();
                     form.querySelector('input[type="date"]').value = getTodayDateForInput();
+                    toggleKeteranganField(form.querySelector('select[id*="radiologi"]'));
+                    toggleKeteranganField(form.querySelector('select[id*="sitb"]'));
                 } catch (error) {
                     console.error("Gagal menambahkan dokumen: ", error);
                 }
@@ -357,16 +416,23 @@
                 }
             };
             
-            const openEditModal = (id) => {
-                const allData = [...kebumenData, ...banyuwangiData];
-                const item = allData.find(d => d.id === id);
+            const openEditModal = (item) => {
                 if (item) {
                     document.getElementById('edit-id').value = item.id;
                     document.getElementById('edit-team').value = item.team;
                     document.getElementById('edit-tanggal').value = item.tanggalInput;
                     document.getElementById('edit-lokasi').value = item.lokasi;
-                    document.getElementById('edit-radiologi').value = item.radiologi;
-                    document.getElementById('edit-sitb').value = item.sitb;
+                    
+                    const editRadiologiSelect = document.getElementById('edit-radiologi');
+                    editRadiologiSelect.value = item.radiologi;
+                    document.getElementById('edit-radiologi-keterangan').value = item.radiologiKeterangan || '';
+                    toggleKeteranganField(editRadiologiSelect, 'edit');
+
+                    const editSitbSelect = document.getElementById('edit-sitb');
+                    editSitbSelect.value = item.sitb;
+                    document.getElementById('edit-sitb-keterangan').value = item.sitbKeterangan || '';
+                    toggleKeteranganField(editSitbSelect, 'edit');
+
                     editModal.classList.remove('hidden');
                     editModal.classList.add('modal-animate-enter');
                     editModalContent.classList.add('modal-content-animate-enter');
@@ -393,7 +459,9 @@
                     tanggalDisplay: formattedDate,
                     lokasi: document.getElementById('edit-lokasi').value,
                     radiologi: document.getElementById('edit-radiologi').value,
-                    sitb: document.getElementById('edit-sitb').value
+                    radiologiKeterangan: document.getElementById('edit-radiologi-keterangan').value.trim(),
+                    sitb: document.getElementById('edit-sitb').value,
+                    sitbKeterangan: document.getElementById('edit-sitb-keterangan').value.trim()
                 };
 
                 try {
@@ -414,39 +482,66 @@
                 sitbChart = new Chart(document.getElementById('sitbChart'), { type: 'doughnut', data: chartData(['#32629d', '#b39058', '#ee2228']), options: chartOptions });
             };
             
-            // Setup Listeners and Initial State
+            const toggleKeteranganField = (selectElement, prefix = '') => {
+                const wrapperId = prefix ? `${prefix}-${selectElement.id.split('-')[1]}-keterangan-wrapper` : `${selectElement.id}-keterangan-wrapper`;
+                const wrapper = document.getElementById(wrapperId);
+                const textarea = wrapper.querySelector('textarea');
+                
+                if (selectElement.value === 'Proses') {
+                    wrapper.classList.remove('hidden');
+                    wrapper.classList.add('visible');
+                } else {
+                    wrapper.classList.remove('visible');
+                    wrapper.classList.add('hidden');
+                    textarea.value = '';
+                }
+            };
+
             const setupRealtimeListeners = () => {
                 const q = query(collection(db, dbCollectionPath), orderBy("tanggalInput", "desc"));
 
                 onSnapshot(q, (snapshot) => {
                     const allActivities = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-                    kebumenData = allActivities.filter(item => item.team === 'kebumen');
-                    banyuwangiData = allActivities.filter(item => item.team === 'banyuwangi');
+                    const kebumenData = allActivities.filter(item => item.team === 'kebumen');
+                    const banyuwangiData = allActivities.filter(item => item.team === 'banyuwangi');
                     
                     renderList('kebumen', kebumenData);
                     renderList('banyuwangi', banyuwangiData);
-                    updateSummaryAndCharts();
+                    updateSummaryAndCharts(allActivities);
                 }, (error) => {
                     console.error("Gagal mengambil data real-time: ", error);
                     showErrorMessage(`Tidak dapat mengambil data. (${error.code})`);
                 });
             };
 
-            // Main execution flow
             const main = () => {
                 initCharts();
+                // Setup form default dates
                 document.getElementById('kebumen-tanggal').value = getTodayDateForInput();
                 document.getElementById('banyuwangi-tanggal').value = getTodayDateForInput();
-                kebumenForm.addEventListener('submit', (e) => handleAddEntry(e, 'kebumen'));
-                banyuwangiForm.addEventListener('submit', (e) => handleAddEntry(e, 'banyuwangi'));
+                
+                // Setup event listeners for forms
+                document.getElementById('kebumen-form').addEventListener('submit', (e) => handleAddEntry(e, 'kebumen'));
+                document.getElementById('banyuwangi-form').addEventListener('submit', (e) => handleAddEntry(e, 'banyuwangi'));
+                
+                // Setup event listeners for modal
                 editForm.addEventListener('submit', handleEditSubmit);
                 cancelEditBtn.addEventListener('click', closeEditModal);
                 closeModalBtn.addEventListener('click', closeEditModal);
                 editModal.addEventListener('click', (e) => { if (e.target === editModal) closeEditModal(); });
-
+                
+                // Setup event listeners for delete confirmation
                 cancelDeleteBtn.addEventListener('click', hideDeleteConfirmModal);
                 confirmDeleteBtn.addEventListener('click', handleDeleteEntry);
             
+                // Setup conditional field listeners
+                ['kebumen-radiologi', 'kebumen-sitb', 'banyuwangi-radiologi', 'banyuwangi-sitb'].forEach(id => {
+                    document.getElementById(id).addEventListener('change', (e) => toggleKeteranganField(e.target));
+                });
+                ['edit-radiologi', 'edit-sitb'].forEach(id => {
+                     document.getElementById(id).addEventListener('change', (e) => toggleKeteranganField(e.target, 'edit'));
+                });
+
                 onAuthStateChanged(auth, user => {
                     if (user) {
                         console.log("Autentikasi berhasil, user UID:", user.uid);
