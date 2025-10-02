@@ -123,7 +123,7 @@
         </section>
 
         <!-- Main Content Grid -->
-        <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Kolom Tim Kabupaten Kebumen -->
             <div class="bg-[#fefdfc] rounded-2xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl">
                 <div class="flex items-center mb-6">
@@ -188,6 +188,41 @@
                             </div>
                         </div>
                         <button type="submit" class="w-full bg-[#b39058] text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-[#b68103] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#d0ad5f] transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                            Tambah Laporan
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Kolom Tim Lapas -->
+            <div class="bg-[#fefdfc] rounded-2xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl">
+                <div class="flex items-center mb-6">
+                     <div class="bg-[#ee2228] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg mr-4">L</div>
+                    <h2 class="text-2xl font-bold text-[#154887]">Tim Lapas</h2>
+                </div>
+                <div id="lapas-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
+                    <p class="text-center text-gray-400 pt-16">Menunggu koneksi ke database...</p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Harian Baru</h3>
+                    <form id="lapas-form" class="space-y-4">
+                        <input type="date" id="lapas-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white">
+                        <input type="text" id="lapas-lokasi" placeholder="Contoh: Lapas Cilacap" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                           <div>
+                                <select id="lapas-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status Radiologi</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="lapas-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="lapas-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <select id="lapas-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status SITB</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="lapas-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="lapas-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-[#ee2228] text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-400 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
                             Tambah Laporan
                         </button>
                     </form>
@@ -276,6 +311,7 @@
 
             const kebumenList = document.getElementById('kebumen-list');
             const banyuwangiList = document.getElementById('banyuwangi-list');
+            const lapasList = document.getElementById('lapas-list');
             
             const editModal = document.getElementById('edit-modal');
             const editModalContent = document.getElementById('edit-modal-content');
@@ -305,6 +341,7 @@
                 </div>`;
                 kebumenList.innerHTML = errorMsgHtml;
                 banyuwangiList.innerHTML = errorMsgHtml;
+                lapasList.innerHTML = errorMsgHtml;
             }
 
             const createEntryElement = (data) => {
@@ -313,27 +350,37 @@
                 entryDiv.setAttribute('data-id', data.id);
                 
                 const radiologiKeteranganHTML = data.radiologi === 'Proses' && data.radiologiKeterangan ?
-                    `<p class="mt-1 text-xs text-gray-600 pl-2 border-l-2 border-yellow-400">Ket: ${data.radiologiKeterangan}</p>` : '';
+                    `<p class="mt-2 text-xs text-gray-700 bg-yellow-50 border border-yellow-200 p-2 rounded-md"><strong>Ket:</strong> ${data.radiologiKeterangan}</p>` : '';
                 const sitbKeteranganHTML = data.sitb === 'Proses' && data.sitbKeterangan ?
-                    `<p class="mt-1 text-xs text-gray-600 pl-2 border-l-2 border-yellow-400">Ket: ${data.sitbKeterangan}</p>` : '';
+                    `<p class="mt-2 text-xs text-gray-700 bg-yellow-50 border border-yellow-200 p-2 rounded-md"><strong>Ket:</strong> ${data.sitbKeterangan}</p>` : '';
 
                 entryDiv.innerHTML = `
-                    <div class="flex justify-between items-start mb-3">
+                    <div class="flex justify-between items-start">
                         <div>
                             <p class="font-bold text-[#154887]">${data.lokasi}</p>
                             <p class="text-sm text-[#32629d]">${data.tanggalDisplay}</p>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <button class="edit-btn text-gray-400 hover:text-[#32629d] transition-transform duration-200 hover:scale-125" title="Edit entri"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zM12 4.75l-2-2-6.5 6.5a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/></svg></button>
-                            <button class="delete-btn text-gray-400 hover:text-[#ee2228] transition-transform duration-200 hover:scale-125" title="Hapus entri"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/></svg></button>
+                            <button class="edit-btn text-gray-400 hover:text-[#32629d] transition-transform duration-200 hover:scale-125" title="Edit entri"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 BORDER="0" 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zM12 4.75l-2-2-6.5 6.5a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/></svg></button>
+                            <button class="delete-btn text-gray-400 hover:text-[#ee2228] transition-transform duration-200 hover:scale-125" title="Hapus entri"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 BORDER="0" 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/></svg></button>
                         </div>
                     </div>
-                    <div class="flex space-x-2 text-xs">
-                        <span class="font-semibold text-gray-600">Radiologi:</span><span class="px-2 py-0.5 rounded-full font-medium ${getStatusBadge(data.radiologi)}">${data.radiologi}</span>
-                        <span class="font-semibold text-gray-600">SITB:</span><span class="px-2 py-0.5 rounded-full font-medium ${getStatusBadge(data.sitb)}">${data.sitb}</span>
+                    <div class="mt-3 space-y-2 pt-3 border-t border-gray-300/60">
+                         <div class="text-xs">
+                            <div class="flex items-center space-x-2">
+                                <span class="font-semibold text-gray-600 w-16">Radiologi:</span>
+                                <span class="px-2 py-0.5 rounded-full font-medium ${getStatusBadge(data.radiologi)}">${data.radiologi}</span>
+                            </div>
+                            ${radiologiKeteranganHTML}
+                        </div>
+                        <div class="text-xs">
+                            <div class="flex items-center space-x-2">
+                                <span class="font-semibold text-gray-600 w-16">SITB:</span>
+                                <span class="px-2 py-0.5 rounded-full font-medium ${getStatusBadge(data.sitb)}">${data.sitb}</span>
+                            </div>
+                            ${sitbKeteranganHTML}
+                        </div>
                     </div>
-                    ${radiologiKeteranganHTML}
-                    ${sitbKeteranganHTML}
                 `;
                 entryDiv.querySelector('.delete-btn').addEventListener('click', () => showDeleteConfirmModal(data.id));
                 entryDiv.querySelector('.edit-btn').addEventListener('click', () => openEditModal(data));
@@ -341,7 +388,7 @@
             };
             
             const renderList = (team, data) => {
-                const listEl = team === 'kebumen' ? kebumenList : banyuwangiList;
+                const listEl = team === 'kebumen' ? kebumenList : (team === 'banyuwangi' ? banyuwangiList : lapasList);
                 listEl.innerHTML = '';
                 if (data.length === 0) {
                     listEl.innerHTML = `<p class="text-center text-gray-400 pt-16">Belum ada data.</p>`;
@@ -504,9 +551,11 @@
                     const allActivities = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                     const kebumenData = allActivities.filter(item => item.team === 'kebumen');
                     const banyuwangiData = allActivities.filter(item => item.team === 'banyuwangi');
+                    const lapasData = allActivities.filter(item => item.team === 'lapas');
                     
                     renderList('kebumen', kebumenData);
                     renderList('banyuwangi', banyuwangiData);
+                    renderList('lapas', lapasData);
                     updateSummaryAndCharts(allActivities);
                 }, (error) => {
                     console.error("Gagal mengambil data real-time: ", error);
@@ -519,10 +568,12 @@
                 // Setup form default dates
                 document.getElementById('kebumen-tanggal').value = getTodayDateForInput();
                 document.getElementById('banyuwangi-tanggal').value = getTodayDateForInput();
+                document.getElementById('lapas-tanggal').value = getTodayDateForInput();
                 
                 // Setup event listeners for forms
                 document.getElementById('kebumen-form').addEventListener('submit', (e) => handleAddEntry(e, 'kebumen'));
                 document.getElementById('banyuwangi-form').addEventListener('submit', (e) => handleAddEntry(e, 'banyuwangi'));
+                document.getElementById('lapas-form').addEventListener('submit', (e) => handleAddEntry(e, 'lapas'));
                 
                 // Setup event listeners for modal
                 editForm.addEventListener('submit', handleEditSubmit);
@@ -535,7 +586,7 @@
                 confirmDeleteBtn.addEventListener('click', handleDeleteEntry);
             
                 // Setup conditional field listeners
-                ['kebumen-radiologi', 'kebumen-sitb', 'banyuwangi-radiologi', 'banyuwangi-sitb'].forEach(id => {
+                ['kebumen-radiologi', 'kebumen-sitb', 'banyuwangi-radiologi', 'banyuwangi-sitb', 'lapas-radiologi', 'lapas-sitb'].forEach(id => {
                     document.getElementById(id).addEventListener('change', (e) => toggleKeteranganField(e.target));
                 });
                 ['edit-radiologi', 'edit-sitb'].forEach(id => {
