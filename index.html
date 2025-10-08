@@ -208,17 +208,33 @@
                     <form id="lapas-form" class="space-y-4">
                         <input type="date" id="lapas-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white">
                         <input type="text" id="lapas-lokasi" placeholder="Contoh: Lapas Cilacap" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-4">
                            <div>
-                                <select id="lapas-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status Radiologi</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <label class="text-sm font-medium text-gray-600">Radiologi</label>
+                                <select id="lapas-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
                                 <div id="lapas-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
                                     <textarea id="lapas-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2"></textarea>
                                 </div>
                             </div>
                             <div>
-                                <select id="lapas-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status SITB</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <label class="text-sm font-medium text-gray-600">SITB</label>
+                                <select id="lapas-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
                                 <div id="lapas-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
                                     <textarea id="lapas-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                             <div>
+                                <label class="text-sm font-medium text-gray-600">SITB</label>
+                                <select id="lapas-laporan-individu" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="lapas-laporan-individu-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="lapas-laporan-individu-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                             <div>
+                                <label class="text-sm font-medium text-gray-600">Lap. Individu</label>
+                                <select id="lapas-laporan-individu" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="lapas-laporan-individu-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="lapas-laporan-individu-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -260,6 +276,16 @@
                         </div>
                     </div>
                 </div>
+                <!-- Khusus untuk Tim Lapas -->
+                <div id="edit-laporan-individu-container" class="hidden">
+                    <label for="edit-laporan-individu" class="block text-sm font-medium text-gray-700">Status Lap. Individu</label>
+                    <select id="edit-laporan-individu" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#32629d] focus:border-[#32629d] sm:text-sm p-2"><option value="Belum Selesai">Belum Selesai</option><option value="Proses">Proses</option><option value="Selesai">Selesai</option></select>
+                    <div id="edit-laporan-individu-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                         <label for="edit-laporan-individu-keterangan" class="block text-sm font-medium text-gray-700 mt-2">Keterangan Proses Lap. Individu</label>
+                        <textarea id="edit-laporan-individu-keterangan" rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#32629d] focus:border-[#32629d] sm:text-sm p-2"></textarea>
+                    </div>
+                </div>
+
                 <div class="pt-4 flex justify-end space-x-3">
                     <button type="button" id="cancel-edit-btn" class="bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 transition-all duration-300 transform hover:scale-105">Batal</button>
                     <button type="submit" class="bg-[#154887] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#194e91] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#32629d] transition-all duration-300 transform hover:scale-105">Simpan Perubahan</button>
@@ -329,7 +355,7 @@
                 switch (status) {
                     case 'Selesai': return 'bg-green-100 text-green-800';
                     case 'Proses': return 'bg-yellow-100 text-yellow-800';
-                    default: return 'bg-[#ee2228] bg-opacity-10 text-[#ee2228]';
+                    default: return 'bg-red-100 text-red-800';
                 }
             };
             
@@ -353,6 +379,51 @@
                     `<p class="mt-2 text-xs text-gray-700 bg-yellow-50 border border-yellow-200 p-2 rounded-md"><strong>Ket:</strong> ${data.radiologiKeterangan}</p>` : '';
                 const sitbKeteranganHTML = data.sitb === 'Proses' && data.sitbKeterangan ?
                     `<p class="mt-2 text-xs text-gray-700 bg-yellow-50 border border-yellow-200 p-2 rounded-md"><strong>Ket:</strong> ${data.sitbKeterangan}</p>` : '';
+                
+                let laporanIndividuHTML = '';
+                if (data.team === 'lapas') {
+                    const laporanKeterangan = data.laporanIndividu === 'Proses' && data.laporanIndividuKeterangan ?
+                        `<p class="mt-2 text-xs text-gray-700 bg-yellow-50 border border-yellow-200 p-2 rounded-md"><strong>Ket:</strong> ${data.laporanIndividuKeterangan}</p>` : '';
+
+                    let deadlineReminderHTML = '';
+                    if (data.laporanIndividu !== 'Selesai' && data.tanggalInput) {
+                        const pelaksanaanDate = new Date(data.tanggalInput + 'T00:00:00');
+                        const deadline = new Date(pelaksanaanDate);
+                        deadline.setDate(deadline.getDate() + 3); // Tenggat adalah H+3
+                        
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);
+
+                        const diffTime = deadline.getTime() - today.getTime();
+                        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                        
+                        let reminderText = '';
+                        let reminderColor = '';
+
+                        if (diffDays > 0) {
+                            reminderText = `Sisa waktu ${diffDays} hari`;
+                            reminderColor = 'bg-green-100 text-green-800';
+                        } else if (diffDays === 0) {
+                            reminderText = 'Tenggat hari ini!';
+                            reminderColor = 'bg-orange-100 text-orange-800 animate-pulse';
+                        } else {
+                            reminderText = `Terlambat ${Math.abs(diffDays)} hari`;
+                            reminderColor = 'bg-red-100 text-red-800';
+                        }
+                        deadlineReminderHTML = `<div class="mt-2 text-xs font-semibold p-1.5 rounded-md text-center ${reminderColor}">${reminderText}</div>`;
+                    }
+
+                    laporanIndividuHTML = `
+                        <div class="text-xs">
+                            <div class="flex items-center space-x-2">
+                                <span class="font-semibold text-gray-600 w-24">Lap. Individu:</span>
+                                <span class="px-2 py-0.5 rounded-full font-medium ${getStatusBadge(data.laporanIndividu)}">${data.laporanIndividu}</span>
+                            </div>
+                            ${laporanKeterangan}
+                            ${deadlineReminderHTML}
+                        </div>`;
+                }
+
 
                 entryDiv.innerHTML = `
                     <div class="flex justify-between items-start">
@@ -361,25 +432,26 @@
                             <p class="text-sm text-[#32629d]">${data.tanggalDisplay}</p>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <button class="edit-btn text-gray-400 hover:text-[#32629d] transition-transform duration-200 hover:scale-125" title="Edit entri"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 BORDER="0" 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zM12 4.75l-2-2-6.5 6.5a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/></svg></button>
-                            <button class="delete-btn text-gray-400 hover:text-[#ee2228] transition-transform duration-200 hover:scale-125" title="Hapus entri"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 BORDER="0" 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/></svg></button>
+                            <button class="edit-btn text-gray-400 hover:text-[#32629d] transition-transform duration-200 hover:scale-125" title="Edit entri"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zM12 4.75l-2-2-6.5 6.5a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/></svg></button>
+                            <button class="delete-btn text-gray-400 hover:text-[#ee2228] transition-transform duration-200 hover:scale-125" title="Hapus entri"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/></svg></button>
                         </div>
                     </div>
                     <div class="mt-3 space-y-2 pt-3 border-t border-gray-300/60">
                          <div class="text-xs">
                             <div class="flex items-center space-x-2">
-                                <span class="font-semibold text-gray-600 w-16">Radiologi:</span>
+                                <span class="font-semibold text-gray-600 w-24">Radiologi:</span>
                                 <span class="px-2 py-0.5 rounded-full font-medium ${getStatusBadge(data.radiologi)}">${data.radiologi}</span>
                             </div>
                             ${radiologiKeteranganHTML}
                         </div>
                         <div class="text-xs">
                             <div class="flex items-center space-x-2">
-                                <span class="font-semibold text-gray-600 w-16">SITB:</span>
+                                <span class="font-semibold text-gray-600 w-24">SITB:</span>
                                 <span class="px-2 py-0.5 rounded-full font-medium ${getStatusBadge(data.sitb)}">${data.sitb}</span>
                             </div>
                             ${sitbKeteranganHTML}
                         </div>
+                        ${laporanIndividuHTML}
                     </div>
                 `;
                 entryDiv.querySelector('.delete-btn').addEventListener('click', () => showDeleteConfirmModal(data.id));
@@ -426,18 +498,35 @@
                 const sitbKeterangan = form.querySelector('textarea[id*="sitb-keterangan"]').value.trim();
 
                 if (!tanggalInput || !lokasi || !radiologi || !sitb) {
-                    alert('Semua field harus diisi.');
+                    alert('Semua field wajib diisi.');
                     return;
                 }
-                const formattedDate = new Date(tanggalInput + 'T00:00:00').toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-                const newEntry = { team, tanggalDisplay: formattedDate, tanggalInput, lokasi, radiologi, radiologiKeterangan, sitb, sitbKeterangan };
+                
+                const newEntry = {
+                    team,
+                    tanggalDisplay: new Date(tanggalInput + 'T00:00:00').toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }),
+                    tanggalInput,
+                    lokasi,
+                    radiologi,
+                    radiologiKeterangan,
+                    sitb,
+                    sitbKeterangan
+                };
+
+                if (team === 'lapas') {
+                    newEntry.laporanIndividu = form.querySelector('select[id*="laporan-individu"]').value;
+                    newEntry.laporanIndividuKeterangan = form.querySelector('textarea[id*="laporan-individu-keterangan"]').value.trim();
+                    if(!newEntry.laporanIndividu) {
+                         alert('Semua field wajib diisi.');
+                         return;
+                    }
+                }
                 
                 try {
                     await addDoc(collection(db, dbCollectionPath), newEntry);
                     form.reset();
                     form.querySelector('input[type="date"]').value = getTodayDateForInput();
-                    toggleKeteranganField(form.querySelector('select[id*="radiologi"]'));
-                    toggleKeteranganField(form.querySelector('select[id*="sitb"]'));
+                    form.querySelectorAll('select').forEach(sel => toggleKeteranganField(sel));
                 } catch (error) {
                     console.error("Gagal menambahkan dokumen: ", error);
                 }
@@ -480,6 +569,17 @@
                     document.getElementById('edit-sitb-keterangan').value = item.sitbKeterangan || '';
                     toggleKeteranganField(editSitbSelect, 'edit');
 
+                    const laporanContainer = document.getElementById('edit-laporan-individu-container');
+                    if (item.team === 'lapas') {
+                        laporanContainer.classList.remove('hidden');
+                        const editLaporanSelect = document.getElementById('edit-laporan-individu');
+                        editLaporanSelect.value = item.laporanIndividu || 'Belum Selesai';
+                        document.getElementById('edit-laporan-individu-keterangan').value = item.laporanIndividuKeterangan || '';
+                        toggleKeteranganField(editLaporanSelect, 'edit');
+                    } else {
+                        laporanContainer.classList.add('hidden');
+                    }
+
                     editModal.classList.remove('hidden');
                     editModal.classList.add('modal-animate-enter');
                     editModalContent.classList.add('modal-content-animate-enter');
@@ -498,18 +598,23 @@
             const handleEditSubmit = async (event) => {
                 event.preventDefault();
                 const id = document.getElementById('edit-id').value;
+                const team = document.getElementById('edit-team').value;
                 const tanggalInput = document.getElementById('edit-tanggal').value;
-                const formattedDate = new Date(tanggalInput + 'T00:00:00').toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-
+                
                 const updatedData = {
                     tanggalInput,
-                    tanggalDisplay: formattedDate,
+                    tanggalDisplay: new Date(tanggalInput + 'T00:00:00').toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }),
                     lokasi: document.getElementById('edit-lokasi').value,
                     radiologi: document.getElementById('edit-radiologi').value,
                     radiologiKeterangan: document.getElementById('edit-radiologi-keterangan').value.trim(),
                     sitb: document.getElementById('edit-sitb').value,
                     sitbKeterangan: document.getElementById('edit-sitb-keterangan').value.trim()
                 };
+
+                if (team === 'lapas') {
+                    updatedData.laporanIndividu = document.getElementById('edit-laporan-individu').value;
+                    updatedData.laporanIndividuKeterangan = document.getElementById('edit-laporan-individu-keterangan').value.trim();
+                }
 
                 try {
                     await updateDoc(doc(db, dbCollectionPath, id), updatedData);
@@ -530,8 +635,10 @@
             };
             
             const toggleKeteranganField = (selectElement, prefix = '') => {
-                const wrapperId = prefix ? `${prefix}-${selectElement.id.split('-')[1]}-keterangan-wrapper` : `${selectElement.id}-keterangan-wrapper`;
+                const fieldName = selectElement.id.split('-')[1];
+                const wrapperId = prefix ? `${prefix}-${fieldName}-keterangan-wrapper` : `${selectElement.id}-keterangan-wrapper`;
                 const wrapper = document.getElementById(wrapperId);
+                if (!wrapper) return;
                 const textarea = wrapper.querySelector('textarea');
                 
                 if (selectElement.value === 'Proses') {
@@ -586,10 +693,10 @@
                 confirmDeleteBtn.addEventListener('click', handleDeleteEntry);
             
                 // Setup conditional field listeners
-                ['kebumen-radiologi', 'kebumen-sitb', 'banyuwangi-radiologi', 'banyuwangi-sitb', 'lapas-radiologi', 'lapas-sitb'].forEach(id => {
+                ['kebumen-radiologi', 'kebumen-sitb', 'banyuwangi-radiologi', 'banyuwangi-sitb', 'lapas-radiologi', 'lapas-sitb', 'lapas-laporan-individu'].forEach(id => {
                     document.getElementById(id).addEventListener('change', (e) => toggleKeteranganField(e.target));
                 });
-                ['edit-radiologi', 'edit-sitb'].forEach(id => {
+                ['edit-radiologi', 'edit-sitb', 'edit-laporan-individu'].forEach(id => {
                      document.getElementById(id).addEventListener('change', (e) => toggleKeteranganField(e.target, 'edit'));
                 });
 
@@ -611,4 +718,5 @@
     </script>
 </body>
 </html>
+
 
