@@ -962,7 +962,9 @@
                     const dataByTeam = {
                         kebumen: allActivities.filter(item => item.team === 'kebumen'),
                         banyuwangi: allActivities.filter(item => item.team === 'banyuwangi'),
-                        lapasbali: allActivities.filter(item => item.team === 'lapasbali'),
+                        // --- PERUBAHAN DI SINI ---
+                        // Sekarang mengambil data dengan team 'lapasbali' ATAU 'lapas' (untuk data lama)
+                        lapasbali: allActivities.filter(item => item.team === 'lapasbali' || item.team === 'lapas'),
                         purwakarta: allActivities.filter(item => item.team === 'purwakarta'),
                         majalengka: allActivities.filter(item => item.team === 'majalengka'),
                         jatim11: allActivities.filter(item => item.team === 'jatim11'),
@@ -1043,4 +1045,5 @@
     </script>
 </body>
 </html>
+
 
