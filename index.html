@@ -123,18 +123,18 @@
         </section>
 
         <!-- Main Content Grid -->
-        <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <main class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             <!-- Kolom Tim Kabupaten Kebumen -->
             <div class="bg-[#fefdfc] rounded-2xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl">
                 <div class="flex items-center mb-6">
                     <div class="bg-[#194e91] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg mr-4">K</div>
-                    <h2 class="text-2xl font-bold text-[#154887]">Tim Kabupaten Kebumen</h2>
+                    <h2 class="text-xl font-bold text-[#154887]">Tim Kabupaten Kebumen</h2>
                 </div>
                 <div id="kebumen-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
-                     <p class="text-center text-gray-400 pt-16">Menunggu koneksi ke database...</p>
+                     <p class="text-center text-gray-400 pt-16">Menunggu koneksi...</p>
                 </div>
                 <div class="mt-6 pt-6 border-t border-gray-200">
-                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Harian Baru</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Baru</h3>
                     <form id="kebumen-form" class="space-y-4">
                         <input type="date" id="kebumen-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#194e91] focus:border-[#194e91] sm:text-sm p-2 bg-white">
                         <input type="text" id="kebumen-lokasi" placeholder="Contoh: Desa Sruweng" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#194e91] focus:border-[#194e91] sm:text-sm p-2 bg-white">
@@ -163,13 +163,13 @@
             <div class="bg-[#fefdfc] rounded-2xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl">
                 <div class="flex items-center mb-6">
                      <div class="bg-[#b68103] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg mr-4">B</div>
-                    <h2 class="text-2xl font-bold text-[#154887]">Tim Kabupaten Banyuwangi</h2>
+                    <h2 class="text-xl font-bold text-[#154887]">Tim Kabupaten Banyuwangi</h2>
                 </div>
                 <div id="banyuwangi-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
-                    <p class="text-center text-gray-400 pt-16">Menunggu koneksi ke database...</p>
+                    <p class="text-center text-gray-400 pt-16">Menunggu koneksi...</p>
                 </div>
                 <div class="mt-6 pt-6 border-t border-gray-200">
-                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Harian Baru</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Baru</h3>
                     <form id="banyuwangi-form" class="space-y-4">
                         <input type="date" id="banyuwangi-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#b68103] focus:border-[#b68103] sm:text-sm p-2 bg-white">
                         <input type="text" id="banyuwangi-lokasi" placeholder="Contoh: Kecamatan Kalibaru" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#b68103] focus:border-[#b68103] sm:text-sm p-2 bg-white">
@@ -194,51 +194,342 @@
                 </div>
             </div>
             
-            <!-- Kolom Tim Lapas -->
+            <!-- Kolom Tim Lapas Bali -->
             <div class="bg-[#fefdfc] rounded-2xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl">
                 <div class="flex items-center mb-6">
-                     <div class="bg-[#ee2228] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg mr-4">L</div>
-                    <h2 class="text-2xl font-bold text-[#154887]">Tim Lapas</h2>
+                     <div class="bg-[#ee2228] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg mr-4">LB</div>
+                    <h2 class="text-xl font-bold text-[#154887]">Tim Lapas Bali</h2>
                 </div>
-                <div id="lapas-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
-                    <p class="text-center text-gray-400 pt-16">Menunggu koneksi ke database...</p>
+                <div id="lapasbali-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
+                    <p class="text-center text-gray-400 pt-16">Menunggu koneksi...</p>
                 </div>
                 <div class="mt-6 pt-6 border-t border-gray-200">
-                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Harian Baru</h3>
-                    <form id="lapas-form" class="space-y-4">
-                        <input type="date" id="lapas-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white">
-                        <input type="text" id="lapas-lokasi" placeholder="Contoh: Lapas Cilacap" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white">
+                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Baru</h3>
+                    <form id="lapasbali-form" class="space-y-4">
+                        <input type="date" id="lapasbali-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white">
+                        <input type="text" id="lapasbali-lokasi" placeholder="Contoh: Lapas Kerobokan" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white">
                         <div class="space-y-4">
                            <div>
                                 <label class="text-sm font-medium text-gray-600">Radiologi</label>
-                                <select id="lapas-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
-                                <div id="lapas-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
-                                    <textarea id="lapas-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2"></textarea>
+                                <select id="lapasbali-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="lapasbali-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="lapasbali-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2"></textarea>
                                 </div>
                             </div>
                             <div>
                                 <label class="text-sm font-medium text-gray-600">SITB</label>
-                                <select id="lapas-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
-                                <div id="lapas-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
-                                    <textarea id="lapas-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2"></textarea>
-                                </div>
-                            </div>
-                             <div>
-                                <label class="text-sm font-medium text-gray-600">SITB</label>
-                                <select id="lapas-laporan-individu" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
-                                <div id="lapas-laporan-individu-keterangan-wrapper" class="keterangan-field hidden mt-2">
-                                    <textarea id="lapas-laporan-individu-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2"></textarea>
+                                <select id="lapasbali-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="lapasbali-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="lapasbali-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2"></textarea>
                                 </div>
                             </div>
                              <div>
                                 <label class="text-sm font-medium text-gray-600">Lap. Individu</label>
-                                <select id="lapas-laporan-individu" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
-                                <div id="lapas-laporan-individu-keterangan-wrapper" class="keterangan-field hidden mt-2">
-                                    <textarea id="lapas-laporan-individu-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2"></textarea>
+                                <select id="lapasbali-laporan-individu" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="lapasbali-laporan-individu-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="lapasbali-laporan-individu-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#ee2228] focus:border-[#ee2228] sm:text-sm p-2"></textarea>
                                 </div>
                             </div>
                         </div>
                         <button type="submit" class="w-full bg-[#ee2228] text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-400 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                            Tambah Laporan
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+             <!-- Kolom Tim Purwakarta -->
+            <div class="bg-[#fefdfc] rounded-2xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="bg-[#4f46e5] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg mr-4">P</div>
+                    <h2 class="text-xl font-bold text-[#154887]">Tim Purwakarta</h2>
+                </div>
+                <div id="purwakarta-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
+                     <p class="text-center text-gray-400 pt-16">Menunggu koneksi...</p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Baru</h3>
+                    <form id="purwakarta-form" class="space-y-4">
+                        <input type="date" id="purwakarta-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#4f46e5] focus:border-[#4f46e5] sm:text-sm p-2 bg-white">
+                        <input type="text" id="purwakarta-lokasi" placeholder="Contoh: Kecamatan Plered" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#4f46e5] focus:border-[#4f46e5] sm:text-sm p-2 bg-white">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <select id="purwakarta-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#4f46e5] focus:border-[#4f46e5] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status Radiologi</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="purwakarta-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="purwakarta-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#4f46e5] focus:border-[#4f46e5] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <select id="purwakarta-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#4f46e5] focus:border-[#4f46e5] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status SITB</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="purwakarta-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="purwakarta-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#4f46e5] focus:border-[#4f46e5] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-[#4f46e5] text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-[#4338ca] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#6366f1] transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                            Tambah Laporan
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Kolom Tim Majalengka -->
+            <div class="bg-[#fefdfc] rounded-2xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="bg-[#0d9488] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg mr-4">M</div>
+                    <h2 class="text-xl font-bold text-[#154887]">Tim Majalengka</h2>
+                </div>
+                <div id="majalengka-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
+                     <p class="text-center text-gray-400 pt-16">Menunggu koneksi...</p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Baru</h3>
+                    <form id="majalengka-form" class="space-y-4">
+                        <input type="date" id="majalengka-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#0d9488] focus:border-[#0d9488] sm:text-sm p-2 bg-white">
+                        <input type="text" id="majalengka-lokasi" placeholder="Contoh: Kecamatan Jatiwangi" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#0d9488] focus:border-[#0d9488] sm:text-sm p-2 bg-white">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <select id="majalengka-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#0d9488] focus:border-[#0d9488] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status Radiologi</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="majalengka-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="majalengka-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#0d9488] focus:border-[#0d9488] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <select id="majalengka-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#0d9488] focus:border-[#0d9488] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status SITB</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="majalengka-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="majalengka-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#0d9488] focus:border-[#0d9488] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-[#0d9488] text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-[#0f766e] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#14b8a6] transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                            Tambah Laporan
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Kolom Tim Jatim 11 -->
+            <div class="bg-[#fefdfc] rounded-2xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="bg-[#0ea5e9] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg mr-4">11</div>
+                    <h2 class="text-xl font-bold text-[#154887]">Tim Jatim 11</h2>
+                </div>
+                <div id="jatim11-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
+                     <p class="text-center text-gray-400 pt-16">Menunggu koneksi...</p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Baru</h3>
+                    <form id="jatim11-form" class="space-y-4">
+                        <input type="date" id="jatim11-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#0ea5e9] focus:border-[#0ea5e9] sm:text-sm p-2 bg-white">
+                        <input type="text" id="jatim11-lokasi" placeholder="Lokasi kegiatan..." required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#0ea5e9] focus:border-[#0ea5e9] sm:text-sm p-2 bg-white">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <select id="jatim11-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#0ea5e9] focus:border-[#0ea5e9] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status Radiologi</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="jatim11-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="jatim11-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#0ea5e9] focus:border-[#0ea5e9] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <select id="jatim11-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#0ea5e9] focus:border-[#0ea5e9] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status SITB</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="jatim11-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="jatim11-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#0ea5e9] focus:border-[#0ea5e9] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-[#0ea5e9] text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-[#0284c7] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#38bdf8] transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                            Tambah Laporan
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Kolom Tim Jatim 12 -->
+            <div class="bg-[#fefdfc] rounded-2xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="bg-[#10b981] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg mr-4">12</div>
+                    <h2 class="text-xl font-bold text-[#154887]">Tim Jatim 12</h2>
+                </div>
+                <div id="jatim12-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
+                     <p class="text-center text-gray-400 pt-16">Menunggu koneksi...</p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Baru</h3>
+                    <form id="jatim12-form" class="space-y-4">
+                        <input type="date" id="jatim12-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#10b981] focus:border-[#10b981] sm:text-sm p-2 bg-white">
+                        <input type="text" id="jatim12-lokasi" placeholder="Lokasi kegiatan..." required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#10b981] focus:border-[#10b981] sm:text-sm p-2 bg-white">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <select id="jatim12-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#10b981] focus:border-[#10b981] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status Radiologi</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="jatim12-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="jatim12-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#10b981] focus:border-[#10b981] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <select id="jatim12-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#10b981] focus:border-[#10b981] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status SITB</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="jatim12-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="jatim12-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#10b981] focus:border-[#10b981] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-[#10b981] text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-[#059669] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#34d399] transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                            Tambah Laporan
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Kolom Tim Jatim 13 -->
+            <div class="bg-[#fefdfc] rounded-2xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="bg-[#a855f7] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg mr-4">13</div>
+                    <h2 class="text-xl font-bold text-[#154887]">Tim Jatim 13</h2>
+                </div>
+                <div id="jatim13-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
+                     <p class="text-center text-gray-400 pt-16">Menunggu koneksi...</p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Baru</h3>
+                    <form id="jatim13-form" class="space-y-4">
+                        <input type="date" id="jatim13-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#a855f7] focus:border-[#a855f7] sm:text-sm p-2 bg-white">
+                        <input type="text" id="jatim13-lokasi" placeholder="Lokasi kegiatan..." required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#a855f7] focus:border-[#a855f7] sm:text-sm p-2 bg-white">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <select id="jatim13-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#a855f7] focus:border-[#a855f7] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status Radiologi</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="jatim13-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="jatim13-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#a855f7] focus:border-[#a855f7] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <select id="jatim13-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#a855f7] focus:border-[#a855f7] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status SITB</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="jatim13-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="jatim13-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#a855f7] focus:border-[#a855f7] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-[#a855f7] text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-[#9333ea] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#c084fc] transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                            Tambah Laporan
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Kolom Tim Jatim 15 -->
+            <div class="bg-[#fefdfc] rounded-2xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="bg-[#f43f5e] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg mr-4">15</div>
+                    <h2 class="text-xl font-bold text-[#154887]">Tim Jatim 15</h2>
+                </div>
+                <div id="jatim15-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
+                     <p class="text-center text-gray-400 pt-16">Menunggu koneksi...</p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Baru</h3>
+                    <form id="jatim15-form" class="space-y-4">
+                        <input type="date" id="jatim15-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f43f5e] focus:border-[#f43f5e] sm:text-sm p-2 bg-white">
+                        <input type="text" id="jatim15-lokasi" placeholder="Lokasi kegiatan..." required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f43f5e] focus:border-[#f43f5e] sm:text-sm p-2 bg-white">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <select id="jatim15-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f43f5e] focus:border-[#f43f5e] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status Radiologi</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="jatim15-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="jatim15-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f43f5e] focus:border-[#f43f5e] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <select id="jatim15-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f43f5e] focus:border-[#f43f5e] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status SITB</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="jatim15-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="jatim15-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f43f5e] focus:border-[#f43f5e] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-[#f43f5e] text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-[#e11d48] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#fb7185] transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                            Tambah Laporan
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Kolom Tim Lapas Jatim 14 -->
+            <div class="bg-[#fefdfc] rounded-2xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl">
+                <div class="flex items-center mb-6">
+                     <div class="bg-[#f59e0b] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg mr-4">14</div>
+                    <h2 class="text-xl font-bold text-[#154887]">Tim Lapas Jatim 14</h2>
+                </div>
+                <div id="lapasjatim14-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
+                    <p class="text-center text-gray-400 pt-16">Menunggu koneksi...</p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Baru</h3>
+                    <form id="lapasjatim14-form" class="space-y-4">
+                        <input type="date" id="lapasjatim14-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f59e0b] focus:border-[#f59e0b] sm:text-sm p-2 bg-white">
+                        <input type="text" id="lapasjatim14-lokasi" placeholder="Lokasi lapas..." required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f59e0b] focus:border-[#f59e0b] sm:text-sm p-2 bg-white">
+                        <div class="space-y-4">
+                           <div>
+                                <label class="text-sm font-medium text-gray-600">Radiologi</label>
+                                <select id="lapasjatim14-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f59e0b] focus:border-[#f59e0b] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="lapasjatim14-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="lapasjatim14-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f59e0b] focus:border-[#f59e0b] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-600">SITB</label>
+                                <select id="lapasjatim14-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f59e0b] focus:border-[#f59e0b] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="lapasjatim14-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="lapasjatim14-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f59e0b] focus:border-[#f59e0b] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                             <div>
+                                <label class="text-sm font-medium text-gray-600">Lap. Individu</label>
+                                <select id="lapasjatim14-laporan-individu" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f59e0b] focus:border-[#f59e0b] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="lapasjatim14-laporan-individu-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="lapasjatim14-laporan-individu-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#f59e0b] focus:border-[#f59e0b] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-[#f59e0b] text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-[#d97706] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#fbbf24] transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                            Tambah Laporan
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Kolom Tim Lapas Jatim 15 -->
+            <div class="bg-[#fefdfc] rounded-2xl shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl">
+                <div class="flex items-center mb-6">
+                     <div class="bg-[#06b6d4] text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-lg mr-4">15</div>
+                    <h2 class="text-xl font-bold text-[#154887]">Tim Lapas Jatim 15</h2>
+                </div>
+                <div id="lapasjatim15-list" class="space-y-4 flex-grow overflow-y-auto custom-scrollbar pr-2 h-96">
+                    <p class="text-center text-gray-400 pt-16">Menunggu koneksi...</p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="text-lg font-semibold mb-4 text-[#154887]">Tambah Data Baru</h3>
+                    <form id="lapasjatim15-form" class="space-y-4">
+                        <input type="date" id="lapasjatim15-tanggal" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#06b6d4] focus:border-[#06b6d4] sm:text-sm p-2 bg-white">
+                        <input type="text" id="lapasjatim15-lokasi" placeholder="Lokasi lapas..." required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#06b6d4] focus:border-[#06b6d4] sm:text-sm p-2 bg-white">
+                        <div class="space-y-4">
+                           <div>
+                                <label class="text-sm font-medium text-gray-600">Radiologi</label>
+                                <select id="lapasjatim15-radiologi" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#06b6d4] focus:border-[#06b6d4] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="lapasjatim15-radiologi-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="lapasjatim15-radiologi-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#06b6d4] focus:border-[#06b6d4] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-600">SITB</label>
+                                <select id="lapasjatim15-sitb" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#06b6d4] focus:border-[#06b6d4] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="lapasjatim15-sitb-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="lapasjatim15-sitb-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#06b6d4] focus:border-[#06b6d4] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                             <div>
+                                <label class="text-sm font-medium text-gray-600">Lap. Individu</label>
+                                <select id="lapasjatim15-laporan-individu" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#06b6d4] focus:border-[#06b6d4] sm:text-sm p-2 bg-white"> <option value="" disabled selected>Status</option> <option value="Belum Selesai">Belum Selesai</option> <option value="Proses">Proses</option> <option value="Selesai">Selesai</option> </select>
+                                <div id="lapasjatim15-laporan-individu-keterangan-wrapper" class="keterangan-field hidden mt-2">
+                                    <textarea id="lapasjatim15-laporan-individu-keterangan" placeholder="Keterangan proses..." rows="2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#06b6d4] focus:border-[#06b6d4] sm:text-sm p-2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-[#06b6d4] text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-[#0891b2] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#22d3ee] transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
                             Tambah Laporan
                         </button>
                     </form>
@@ -335,9 +626,19 @@
             let radiologiChart, sitbChart;
             let itemToDeleteId = null;
 
-            const kebumenList = document.getElementById('kebumen-list');
-            const banyuwangiList = document.getElementById('banyuwangi-list');
-            const lapasList = document.getElementById('lapas-list');
+            const listElements = {
+                kebumen: document.getElementById('kebumen-list'),
+                banyuwangi: document.getElementById('banyuwangi-list'),
+                lapasbali: document.getElementById('lapasbali-list'),
+                purwakarta: document.getElementById('purwakarta-list'),
+                majalengka: document.getElementById('majalengka-list'),
+                jatim11: document.getElementById('jatim11-list'),
+                jatim12: document.getElementById('jatim12-list'),
+                jatim13: document.getElementById('jatim13-list'),
+                jatim15: document.getElementById('jatim15-list'),
+                lapasjatim14: document.getElementById('lapasjatim14-list'),
+                lapasjatim15: document.getElementById('lapasjatim15-list'),
+            };
             
             const editModal = document.getElementById('edit-modal');
             const editModalContent = document.getElementById('edit-modal-content');
@@ -365,9 +666,9 @@
                     <p class="text-xs mt-2">${message}</p>
                     <p class="text-xs mt-2">Pastikan konfigurasi benar dan domain telah diizinkan di Firebase.</p>
                 </div>`;
-                kebumenList.innerHTML = errorMsgHtml;
-                banyuwangiList.innerHTML = errorMsgHtml;
-                lapasList.innerHTML = errorMsgHtml;
+                Object.values(listElements).forEach(el => {
+                    if(el) el.innerHTML = errorMsgHtml;
+                });
             }
 
             const createEntryElement = (data) => {
@@ -381,7 +682,7 @@
                     `<p class="mt-2 text-xs text-gray-700 bg-yellow-50 border border-yellow-200 p-2 rounded-md"><strong>Ket:</strong> ${data.sitbKeterangan}</p>` : '';
                 
                 let laporanIndividuHTML = '';
-                if (data.team === 'lapas') {
+                if (data.team && data.team.startsWith('lapas')) {
                     const laporanKeterangan = data.laporanIndividu === 'Proses' && data.laporanIndividuKeterangan ?
                         `<p class="mt-2 text-xs text-gray-700 bg-yellow-50 border border-yellow-200 p-2 rounded-md"><strong>Ket:</strong> ${data.laporanIndividuKeterangan}</p>` : '';
 
@@ -460,7 +761,8 @@
             };
             
             const renderList = (team, data) => {
-                const listEl = team === 'kebumen' ? kebumenList : (team === 'banyuwangi' ? banyuwangiList : lapasList);
+                const listEl = listElements[team];
+                if (!listEl) return;
                 listEl.innerHTML = '';
                 if (data.length === 0) {
                     listEl.innerHTML = `<p class="text-center text-gray-400 pt-16">Belum ada data.</p>`;
@@ -513,7 +815,7 @@
                     sitbKeterangan
                 };
 
-                if (team === 'lapas') {
+                if (team.startsWith('lapas')) {
                     newEntry.laporanIndividu = form.querySelector('select[id*="laporan-individu"]').value;
                     newEntry.laporanIndividuKeterangan = form.querySelector('textarea[id*="laporan-individu-keterangan"]').value.trim();
                     if(!newEntry.laporanIndividu) {
@@ -570,7 +872,7 @@
                     toggleKeteranganField(editSitbSelect, 'edit');
 
                     const laporanContainer = document.getElementById('edit-laporan-individu-container');
-                    if (item.team === 'lapas') {
+                    if (item.team && item.team.startsWith('lapas')) {
                         laporanContainer.classList.remove('hidden');
                         const editLaporanSelect = document.getElementById('edit-laporan-individu');
                         editLaporanSelect.value = item.laporanIndividu || 'Belum Selesai';
@@ -611,7 +913,7 @@
                     sitbKeterangan: document.getElementById('edit-sitb-keterangan').value.trim()
                 };
 
-                if (team === 'lapas') {
+                if (team.startsWith('lapas')) {
                     updatedData.laporanIndividu = document.getElementById('edit-laporan-individu').value;
                     updatedData.laporanIndividuKeterangan = document.getElementById('edit-laporan-individu-keterangan').value.trim();
                 }
@@ -647,7 +949,7 @@
                 } else {
                     wrapper.classList.remove('visible');
                     wrapper.classList.add('hidden');
-                    textarea.value = '';
+                    if(textarea) textarea.value = '';
                 }
             };
 
@@ -656,13 +958,25 @@
 
                 onSnapshot(q, (snapshot) => {
                     const allActivities = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-                    const kebumenData = allActivities.filter(item => item.team === 'kebumen');
-                    const banyuwangiData = allActivities.filter(item => item.team === 'banyuwangi');
-                    const lapasData = allActivities.filter(item => item.team === 'lapas');
                     
-                    renderList('kebumen', kebumenData);
-                    renderList('banyuwangi', banyuwangiData);
-                    renderList('lapas', lapasData);
+                    const dataByTeam = {
+                        kebumen: allActivities.filter(item => item.team === 'kebumen'),
+                        banyuwangi: allActivities.filter(item => item.team === 'banyuwangi'),
+                        lapasbali: allActivities.filter(item => item.team === 'lapasbali'),
+                        purwakarta: allActivities.filter(item => item.team === 'purwakarta'),
+                        majalengka: allActivities.filter(item => item.team === 'majalengka'),
+                        jatim11: allActivities.filter(item => item.team === 'jatim11'),
+                        jatim12: allActivities.filter(item => item.team === 'jatim12'),
+                        jatim13: allActivities.filter(item => item.team === 'jatim13'),
+                        jatim15: allActivities.filter(item => item.team === 'jatim15'),
+                        lapasjatim14: allActivities.filter(item => item.team === 'lapasjatim14'),
+                        lapasjatim15: allActivities.filter(item => item.team === 'lapasjatim15'),
+                    };
+
+                    for (const team in dataByTeam) {
+                        renderList(team, dataByTeam[team]);
+                    }
+
                     updateSummaryAndCharts(allActivities);
                 }, (error) => {
                     console.error("Gagal mengambil data real-time: ", error);
@@ -673,15 +987,23 @@
             const main = () => {
                 initCharts();
                 // Setup form default dates
-                document.getElementById('kebumen-tanggal').value = getTodayDateForInput();
-                document.getElementById('banyuwangi-tanggal').value = getTodayDateForInput();
-                document.getElementById('lapas-tanggal').value = getTodayDateForInput();
+                document.querySelectorAll('input[type="date"]').forEach(input => {
+                    input.value = getTodayDateForInput();
+                });
                 
                 // Setup event listeners for forms
                 document.getElementById('kebumen-form').addEventListener('submit', (e) => handleAddEntry(e, 'kebumen'));
                 document.getElementById('banyuwangi-form').addEventListener('submit', (e) => handleAddEntry(e, 'banyuwangi'));
-                document.getElementById('lapas-form').addEventListener('submit', (e) => handleAddEntry(e, 'lapas'));
-                
+                document.getElementById('lapasbali-form').addEventListener('submit', (e) => handleAddEntry(e, 'lapasbali'));
+                document.getElementById('purwakarta-form').addEventListener('submit', (e) => handleAddEntry(e, 'purwakarta'));
+                document.getElementById('majalengka-form').addEventListener('submit', (e) => handleAddEntry(e, 'majalengka'));
+                document.getElementById('jatim11-form').addEventListener('submit', (e) => handleAddEntry(e, 'jatim11'));
+                document.getElementById('jatim12-form').addEventListener('submit', (e) => handleAddEntry(e, 'jatim12'));
+                document.getElementById('jatim13-form').addEventListener('submit', (e) => handleAddEntry(e, 'jatim13'));
+                document.getElementById('jatim15-form').addEventListener('submit', (e) => handleAddEntry(e, 'jatim15'));
+                document.getElementById('lapasjatim14-form').addEventListener('submit', (e) => handleAddEntry(e, 'lapasjatim14'));
+                document.getElementById('lapasjatim15-form').addEventListener('submit', (e) => handleAddEntry(e, 'lapasjatim15'));
+
                 // Setup event listeners for modal
                 editForm.addEventListener('submit', handleEditSubmit);
                 cancelEditBtn.addEventListener('click', closeEditModal);
@@ -693,11 +1015,14 @@
                 confirmDeleteBtn.addEventListener('click', handleDeleteEntry);
             
                 // Setup conditional field listeners
-                ['kebumen-radiologi', 'kebumen-sitb', 'banyuwangi-radiologi', 'banyuwangi-sitb', 'lapas-radiologi', 'lapas-sitb', 'lapas-laporan-individu'].forEach(id => {
-                    document.getElementById(id).addEventListener('change', (e) => toggleKeteranganField(e.target));
-                });
-                ['edit-radiologi', 'edit-sitb', 'edit-laporan-individu'].forEach(id => {
-                     document.getElementById(id).addEventListener('change', (e) => toggleKeteranganField(e.target, 'edit'));
+                document.querySelectorAll('select').forEach(select => {
+                     select.addEventListener('change', (e) => {
+                        if(e.target.id.startsWith('edit-')){
+                            toggleKeteranganField(e.target, 'edit')
+                        } else {
+                            toggleKeteranganField(e.target)
+                        }
+                     });
                 });
 
                 onAuthStateChanged(auth, user => {
@@ -718,5 +1043,4 @@
     </script>
 </body>
 </html>
-
 
