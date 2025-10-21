@@ -729,6 +729,11 @@
                             ${deadlineReminderHTML}
                         </div>`;
                 }
+                
+                const timestamp = data.lastUpdated ? new Date(data.lastUpdated).toLocaleString('id-ID', {
+                    day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit'
+                }).replace(/\./g, ':') : '';
+                const timestampHTML = timestamp ? `<p class="text-xs text-gray-500 italic">Diupdate: ${timestamp} WITA</p>` : '';
 
 
                 entryDiv.innerHTML = `
@@ -758,6 +763,9 @@
                             ${sitbKeteranganHTML}
                         </div>
                         ${laporanIndividuHTML}
+                    </div>
+                    <div class="text-right border-t border-gray-200 mt-3 pt-2">
+                        ${timestampHTML}
                     </div>
                 `;
                 entryDiv.querySelector('.delete-btn').addEventListener('click', () => showDeleteConfirmModal(data.id));
@@ -817,7 +825,8 @@
                     radiologi,
                     radiologiKeterangan,
                     sitb,
-                    sitbKeterangan
+                    sitbKeterangan,
+                    lastUpdated: new Date().toISOString()
                 };
 
                 if (team.startsWith('lapas')) {
@@ -915,7 +924,8 @@
                     radiologi: document.getElementById('edit-radiologi').value,
                     radiologiKeterangan: document.getElementById('edit-radiologi-keterangan').value.trim(),
                     sitb: document.getElementById('edit-sitb').value,
-                    sitbKeterangan: document.getElementById('edit-sitb-keterangan').value.trim()
+                    sitbKeterangan: document.getElementById('edit-sitb-keterangan').value.trim(),
+                    lastUpdated: new Date().toISOString()
                 };
 
                 if (team.startsWith('lapas')) {
